@@ -33,5 +33,14 @@ export default async function Home() {
         </div>
       ))}
     </div>
+
+    {/* Footer para js.org */}
+    <footer className="mt-16 pt-8 pb-6 border-t border-gray-200 bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 text-center text-sm text-gray-500">
+        This site uses a free <a href="https://js.org" target="_blank" rel="noreferrer" className="font-semibold hover:text-blue-600">js.org</a> subdomain.
+      </div>
+    </footer>
+  </div>
+
   );
 }
