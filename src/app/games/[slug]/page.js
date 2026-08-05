@@ -20,10 +20,10 @@ export default async function GameDetails({ params }) {
   return (
     <div className="container mx-auto px-12 py-10 max-w-7xl space-y-12 text-white">
       
-      {/* --- BOTÃO GO BACK ADICIONADO AQUI --- */}
+      {/* Go Back */}
       <div className="mb-6">
         <Link
-          href="/" // Mude isto para onde você quer voltar (ex: "/" para a home, ou "/games")
+          href="/"
           className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-md transition-all inline-block"
         >
           ← Go back
@@ -156,8 +156,6 @@ export default async function GameDetails({ params }) {
         <a
           href={`/privacy-policy/${game.slug}`}
           className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-md transition-all"
-          target="_blank"
-          rel="noopener noreferrer"
         >
           Privacy Policy
         </a>
