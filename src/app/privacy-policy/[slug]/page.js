@@ -15,6 +15,12 @@ export default async function PrivacyPolicyDetails({ params }) {
   const policy = await getPolicy(slug);
 
   return (
+  <Link
+    href={`/game/${slug}`}
+    className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-md transition-all"
+  >
+  ← Go back
+    
     <div className="container mx-auto px-12 py-10 max-w-7xl space-y-12 text-green">
       <p>Last Updated: {policy.date}</p>
       <h1 className="text-5xl font-extrabold text-center">{policy.title}</h1>
@@ -26,7 +32,6 @@ export default async function PrivacyPolicyDetails({ params }) {
           className="prose prose-invert prose-lg mx-auto w-full max-w-6xl"
           dangerouslySetInnerHTML={{ __html: policy.content }}
         />
-      </section>
     </div>
   );
 }
