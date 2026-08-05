@@ -1,5 +1,6 @@
 // app/games/[slug]/page.js
 import Image from 'next/image';
+import Link from 'next/link'; // <--- IMPORTANTE: Importar o Link
 import { getGameBySlug } from '@/api';
 import markdownToHtml from '@/api/markdown';
 
@@ -18,11 +19,23 @@ export default async function GameDetails({ params }) {
 
   return (
     <div className="container mx-auto px-12 py-10 max-w-7xl space-y-12 text-white">
+      
+      {/* --- BOTÃO GO BACK ADICIONADO AQUI --- */}
+      <div className="mb-6">
+        <Link
+          href="/" // Mude isto para onde você quer voltar (ex: "/" para a home, ou "/games")
+          className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-md transition-all inline-block"
+        >
+          ← Go back
+        </Link>
+      </div>
+      {/* ------------------------------------- */}
+
       <h1 className="text-5xl font-extrabold text-center">{game.title}</h1>
 
-
       {/* Cover Image */}
-      <div className="mx-auto rounded 2xl overflow-hidden" style={{ width: '67%' }}>
+      {/* Corrigi o "rounded 2xl" para "rounded-2xl" (com hífen) */}
+      <div className="mx-auto rounded-2xl overflow-hidden" style={{ width: '67%' }}>
         <div className="relative w-full" style={{ paddingTop: '56.25%' /* 16:9 aspect ratio */ }}>
           <Image
             className="object-cover"
@@ -34,7 +47,6 @@ export default async function GameDetails({ params }) {
           />
         </div>
       </div>
-
 
       {/* Description */}
       <p className="text-lg leading-relaxed max-w-6xl mx-auto text-center">{game.description}</p>
@@ -63,7 +75,7 @@ export default async function GameDetails({ params }) {
         )}
         {game.itchIoId && (
           <a
-            href={`https://2dberries.itch.io/${game.itchIoId}`} // Replace with actual itch.io game link if available
+            href={`https://2dberries.itch.io/${game.itchIoId}`}
             className="bg-pink-600 hover:bg-pink-800 text-white font-bold py-4 px-8 rounded-lg shadow-md transition-all"
             target="_blank"
             rel="noopener noreferrer"
