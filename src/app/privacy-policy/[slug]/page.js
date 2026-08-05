@@ -20,7 +20,7 @@ export default async function PrivacyPolicyDetails({ params }) {
       {/* O botão de voltar fica aqui, fora do conteúdo principal */}
       <div className="mb-6">
         <Link
-          href={`/game/${slug}`}
+          href={`/games/${slug}`}
           className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-md transition-all inline-block"
         >
           ← Go back
