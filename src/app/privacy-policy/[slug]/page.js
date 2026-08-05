@@ -1,6 +1,6 @@
 import { getPrivacyPolicyBySlug } from '@/api';
 import markdownToHtml from '@/api/markdown';
-import Link from 'next/link'; // Não se esqueça de importar o Link!
+import Link from 'next/link';
 
 async function getPolicy(slug) {
   const policy = getPrivacyPolicyBySlug(slug);
@@ -17,7 +17,7 @@ export default async function PrivacyPolicyDetails({ params }) {
 
   return (
     <div className="container mx-auto px-12 py-10 max-w-7xl space-y-12 text-green">
-      {/* O botão de voltar fica aqui, fora do conteúdo principal */}
+      {/* Go Back */}
       <div className="mb-6">
         <Link
           href={`/games/${slug}`}
