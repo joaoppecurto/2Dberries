@@ -1,6 +1,6 @@
 // app/games/[slug]/page.js
 import Image from 'next/image';
-import Link from 'next/link'; // <--- IMPORTANTE: Importar o Link
+import Link from 'next/link'; // Import Link
 import { getGameBySlug } from '@/api';
 import markdownToHtml from '@/api/markdown';
 
